@@ -1,0 +1,104 @@
+//BERIKUT ADALAH SOURCE CODE JAVA,TOTAL ADA 3 
+//TAMPILAN KE-1 (LOGIN)
+package com.example.replicate2;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Login extends AppCompatActivity {
+
+    //list elemen
+    TextView tvmobilenumber;
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        tvmobilenumber=findViewById(R.id.tvmobilenumber);
+        tvmobilenumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Login.this,mobile_login.class);
+                startActivity(in);
+            }
+        });
+
+    }
+}
+
+
+
+
+//TAMPILAN KE-2 (MOBILE LOGIN)
+package com.example.replicate2;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class mobile_login extends AppCompatActivity {
+
+    Button btncircle;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.mobile_login);
+
+        btncircle=findViewById(R.id.btncircle);
+        btncircle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(mobile_login.this,sms_code.class);
+                startActivity(in);
+
+            }
+        });
+
+        };
+    }
+
+
+
+
+//TAMPILAN KE-3 (TERAKHIR/SMS_CODE)
+package com.example.replicate2;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class sms_code extends AppCompatActivity {
+
+    Button btnsms;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sms_code);
+
+        btnsms=findViewById(R.id.btnsms);
+        btnsms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sms = new Intent(sms_code.this, Kalkulator.class);
+                startActivity(sms);
+            }
+        });
+    }
+}
+
